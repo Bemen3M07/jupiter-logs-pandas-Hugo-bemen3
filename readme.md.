@@ -1,0 +1,13 @@
+Exercici 1
+Explica quines comandes de Linux Pots fer servir a l’hora d’analitzar logs escrits a
+fitxer per a:
+● Veure contínuament els logs que es van escrivint a un arxiu
+
+Para monitorear un archivo de logs en tiempo real, puedes usar el comando tail con la opción -f: 'tail -f nombre_del_archivo.log'
+Tambien exsiste el comando 'less +F nombre_del_archivo.log' que también ver en tiempo real, pero además permite navegar por el archivo.
+
+● Cercar una paraula concreta dintre d’un arxiu de log
+
+Para buscar una palabra específica en un archivo de log, puedes usar el comando grep. 'grep 'palabra_clave' nombre_del_archivo.log'
+Tambien en caso de que quieras ver solo las líneas nuevas que contienen una palabra concreta, puedes combinar tail con grep. 'tail -f nombre_del_archivo.log | grep 'palabra_clave''
+
