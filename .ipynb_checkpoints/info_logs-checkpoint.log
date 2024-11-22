@@ -1,0 +1,4 @@
+2024-11-22 18:24:54,553 - main_logger - INFO - Este es un mensaje de información.
+2024-11-22 18:24:54,555 - main_logger - WARNING - Este es un mensaje de advertencia.
+2024-11-22 18:24:54,556 - main_logger - ERROR - Este es un mensaje de error.
+2024-11-22 18:24:54,557 - main_logger - CRITICAL - Este es un mensaje crítico.
