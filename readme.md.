@@ -11,3 +11,18 @@ Tambien exsiste el comando 'less +F nombre_del_archivo.log' que también ver en 
 Para buscar una palabra específica en un archivo de log, puedes usar el comando grep. 'grep 'palabra_clave' nombre_del_archivo.log'
 Tambien en caso de que quieras ver solo las líneas nuevas que contienen una palabra concreta, puedes combinar tail con grep. 'tail -f nombre_del_archivo.log | grep 'palabra_clave''
 
+Exercici 2
+2. Que creieu que és millor mostrar els logs per exemple a la terminal durant l'execució del programa o bolcar-los en un fitxer de text?  Afegiu al readme.md del repositori aquesta pregunta amb la seva reposta
+
+Volcar los logs a un archivo de texto es mejor, porque permite mantener un historial persistente para análisis, auditorías y resolución de errores, algo esencial en entornos de producción o aplicaciones críticas. 
+Además, facilita su integración con herramientas avanzadas de monitoreo y diagnóstico.
+
+3. Omple la següent taula amb expmple, avantantges, i desavantatges de les següents maneres de fer logs:
+### Avantatges i desavantatges de diferents maneres de fer logs
+
+| Mètode                                   | Exemple                                                                                                           | Avantatges                                                                                   | Desavantatges                                                                                 |
+|------------------------------------------|-------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
+| **Fent servir la configuració per defecte del mòdul logging** | ```python<br>import logging<br>logging.basicConfig(level=logging.INFO)<br>logging.info("Hola Mundo")```            | - Senzill de configurar.<br>- Ideal per a scripts petits o prototips.                       | - Poc flexible.<br>- Difícil d’adaptar a projectes més complexos.<br>- Canvis requereixen modificar codi. |
+| **Instanciant un objecte logger i parametritzant-lo des del programa** | ```python<br>import logging<br>logger = logging.getLogger("mi_logger")<br>handler = logging.FileHandler("logs.log")<br>logger.addHandler(handler)<br>logger.info("Info")``` | - Gran flexibilitat.<br>- Permet múltiples loggers independents.<br>- Adaptable a sistemes grans. | - Configuració manual extensa.<br>- Sense organització, el codi es torna menys llegible.                   |
+| **Instanciant un objecte logger a partir d’una configuració emmagatzemada a fitxer** | **Fitxer de configuració `logging.conf`:**<br>`[loggers]<br>keys=root`<br>`[handlers]<br>keys=fileHandler`<br>`[formatter_default]<br>format=%(message)s`<br><br>**Codi:**<br>```python<br>import logging.config<br>logging.config.fileConfig('logging.conf')<br>logger = logging.getLogger('root')<br>logger.info("Missatge")``` | - Configuració modular i reutilitzable.<br>- No cal modificar el codi per canviar configuracions.<br>- Escalable per a projectes grans. | - Requereix més aprenentatge inicial.<br>- Necessita mantenir el fitxer de configuració juntament amb el programa. |
+
