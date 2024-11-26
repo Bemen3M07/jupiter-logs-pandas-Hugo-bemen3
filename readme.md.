@@ -18,11 +18,34 @@ Volcar los logs a un archivo de texto es mejor, porque permite mantener un histo
 Además, facilita su integración con herramientas avanzadas de monitoreo y diagnóstico.
 
 3. Omple la següent taula amb expmple, avantantges, i desavantatges de les següents maneres de fer logs:
-### Avantatges i desavantatges de diferents maneres de fer logs
 
 | Mètode                                   | Exemple                                                                                                     | Avantatges                                                                                   | Desavantatges                                                                                 |
 |------------------------------------------|-------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
 | **Fent servir la configuració per defecte del mòdul logging** | ```python<br>import logging<br>logging.basicConfig(level=logging.INFO)<br>logging.info("Hola Mundo")```       | - Senzill de configurar.<br>- Ideal per a scripts petits o prototips.                       | - Poc flexible.<br>- Difícil d’adaptar a projectes més complexos.<br>- Canvis requereixen modificar codi. |
 | **Instanciant un objecte logger i parametritzant-lo des del programa** | ```python<br>import logging<br>logger = logging.getLogger("mi_logger")<br>handler = logging.FileHandler("logs.log")<br>logger.addHandler(handler)<br>logger.info("Info")``` | - Gran flexibilitat.<br>- Permet múltiples loggers independents.<br>- Adaptable a sistemes grans. | - Configuració manual extensa.<br>- Sense organització, el codi es torna menys llegible.                   |
 | **Instanciant un objecte logger a partir d’una configuració emmagatzemada a fitxer** | **Fitxer de configuració `logging.conf`:**<br>`[loggers]<br>keys=root`<br>`[handlers]<br>keys=fileHandler`<br>`[formatter_default]<br>format=%(message)s`<br><br>**Codi:**<br>```python<br>import logging.config<br>logging.config.fileConfig('logging.conf')<br>logger = logging.getLogger('root')<br>logger.info("Missatge")``` | - Configuració modular i reutilitzable.<br>- No cal modificar el codi per canviar configuracions.<br>- Escalable per a projectes grans. | - Requereix més aprenentatge inicial.<br>- Necessita mantenir el fitxer de configuració juntament amb el programa. |
+
+4. Cerca llibreries de logs en altres llenguatjes (al menys 2, i identifica cóm resolen les següents característiques típiques d’un sistema de logging.
+
+| **Pregunta**                             | **Lenguaje 1: Python**                     | **Lenguaje 2: Java**                          | **Otro (opcional): JavaScript**              |
+|------------------------------------------|--------------------------------------------|-----------------------------------------------|----------------------------------------------|
+| **Nombre de la librería**                | Logging                                    | Log4j                                        | Winston                                      |
+| **¿Es nativa del lenguaje?**             | Sí                                         | No                                           | No                                           |
+| **URL para descargar la librería**       | Incluida en la biblioteca estándar         | [log4j.apache.org](https://logging.apache.org/log4j/2.x/) | [npmjs.com/winston](https://www.npmjs.com/package/winston) |
+| **Inicialización del objeto logger**     | `import logging`<br>`logger = logging.getLogger()` | `Logger logger = LogManager.getLogger("MyLogger");` | `const winston = require('winston');`<br>`const logger = winston.createLogger({...});` |
+| **Niveles de log disponibles**           | DEBUG, INFO, WARNING, ERROR, CRITICAL      | TRACE, DEBUG, INFO, WARN, ERROR, FATAL       | error, warn, info, http, verbose, debug, silly |
+| **Método para hacer log**                | `logger.info("Mensaje")`                  | `logger.info("Mensaje");`                    | `logger.info("Mensaje");`                    |
+| **Tipos de manejadores (pantalla, archivo...)** | StreamHandler, FileHandler, etc.          | ConsoleAppender, FileAppender, RollingFileAppender | Console, File, HTTP, etc.                   |
+| **Opciones de formato**                  | Soporte para definir formatos como `'%(asctime)s - %(levelname)s - %(message)s'` | Configurable con patrones como `%d, %p, %m`  | Configurable con JSON o plantillas de texto  |
+
+Exercici 3
+
+Pandas
+Funcionalitat: Pandas és una llibreria de Python especialment útil per a la manipulació i anàlisi de dades. Permet treballar amb dades tabulars en formats com CSV, JSON i Excel. Les seves principals funcionalitats inclouen:
+
+Lectura i escriptura de fitxers (CSV, JSON, Excel, etc.).
+Manipulació de dades mitjançant DataFrames (estructura de dades semblant a una taula).
+Transformació i neteja de dades.
+Agrupació i agregació de dades per a anàlisis més complexes.
+Integració amb altres llibreries per visualització gràfica (com Matplotlib o Seaborn).
 
