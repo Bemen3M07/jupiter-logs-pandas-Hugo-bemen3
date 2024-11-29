@@ -49,3 +49,76 @@ Transformació i neteja de dades.
 Agrupació i agregació de dades per a anàlisis més complexes.
 Integració amb altres llibreries per visualització gràfica (com Matplotlib o Seaborn).
 
+import pandas as pd
+# Cargar un archivo CSV
+df = pd.read_csv("datos.csv")
+# Mostrar las primeras filas
+print(df.head())
+
+2. Jupyter Notebook
+Funcionalidad:
+Jupyter Notebook es una aplicación web que permite escribir y ejecutar código en celdas interactivas, combinando texto descriptivo y resultados de ejecución en un solo documento. Ideal para:
+
+Documentar análisis de datos paso a paso.
+Prototipar visualizaciones y procesos.
+Crear informes interactivos que combinen código, texto y gráficos.
+Ejemplo de uso: Una celda básica para generar gráficos sería:
+
+import matplotlib.pyplot as plt
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.show()
+
+
+Aquí tienes una versión en castellano sobre las herramientas Pandas, Jupyter Notebook y ReportLab, con detalles sobre sus funcionalidades, pruebas sugeridas y la justificación de su uso en un proyecto para trabajar con datos y generar gráficos:
+
+Funcionalidad de cada herramienta
+1. Pandas
+Funcionalidad:
+Pandas es una biblioteca de Python diseñada para manipular y analizar datos de forma eficiente. Permite trabajar con formatos como CSV, JSON o Excel, ofreciendo funcionalidades clave como:
+
+Lectura y escritura de archivos de datos (CSV, JSON, etc.).
+Gestión de estructuras de datos tabulares mediante DataFrames.
+Limpieza, transformación y análisis de datos.
+Agrupaciones y cálculos estadísticos.
+Integración con otras bibliotecas para visualización (Matplotlib, Seaborn).
+Ejemplo de uso:
+
+python
+Copiar código
+import pandas as pd
+# Cargar un archivo CSV
+df = pd.read_csv("datos.csv")
+# Mostrar las primeras filas
+print(df.head())
+2. Jupyter Notebook
+Funcionalidad:
+Jupyter Notebook es una aplicación web que permite escribir y ejecutar código en celdas interactivas, combinando texto descriptivo y resultados de ejecución en un solo documento. Ideal para:
+
+Documentar análisis de datos paso a paso.
+Prototipar visualizaciones y procesos.
+Crear informes interactivos que combinen código, texto y gráficos.
+Ejemplo de uso: Una celda básica para generar gráficos sería:
+
+python
+Copiar código
+import matplotlib.pyplot as plt
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.show()
+Al ejecutarla, el gráfico aparecerá directamente en el navegador.
+
+3. ReportLab
+Funcionalidad:
+ReportLab es una biblioteca para generar documentos PDF mediante código Python. Es útil para:
+
+Crear informes automatizados personalizados.
+Insertar gráficos, tablas y textos dinámicos en documentos PDF.
+Generar documentos visualmente atractivos de forma programática.
+Ejemplo de uso:
+
+from reportlab.pdfgen import canvas
+
+c = canvas.Canvas("informe.pdf")
+c.drawString(100, 750, "Informe de Datos")
+c.save()
+
+
